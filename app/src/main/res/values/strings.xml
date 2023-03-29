@@ -3,4 +3,6 @@
     <string name="UsernameTxt">Username</string>
     <string name="loginTxt">Login</string>
     <string name="register_link">Create account !</string>
+    <string name="SignUpTxt">Sign Up</string>
+    <string name="login_link">I already have an account:</string>
 </resources>
