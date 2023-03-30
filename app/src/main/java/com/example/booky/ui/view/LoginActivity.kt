@@ -8,25 +8,36 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.booky.R
+import com.example.booky.data.api.RestApiService
+import com.example.booky.data.api.RetrofitInstance
+import com.example.booky.data.models.User
+import com.example.booky.utils.LoadingDialog
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.google.gson.Gson
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
-    lateinit var usernameLayout: TextInputLayout;
+    lateinit var userEmailLayout: TextInputLayout;
     lateinit var passwordLayout: TextInputLayout;
-    lateinit var usernameEditText: EditText;
+    lateinit var userEmailEditText: EditText;
     lateinit var passwordEditText: EditText;
+    lateinit var loadingDialog: LoadingDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
 
-        usernameLayout = findViewById(R.id.username_tfLayout)
+        userEmailLayout = findViewById(R.id.userEmail_tfLayout)
         passwordLayout = findViewById(R.id.password_tfLayout)
-        usernameEditText = findViewById(R.id.usernameEditText)
+        userEmailEditText = findViewById(R.id.userEmailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
+
 
 
         // Redirect To Register Screen
@@ -41,8 +52,8 @@ class LoginActivity : AppCompatActivity() {
 
         val loginBtn = findViewById<Button>(R.id.login_btn)
         loginBtn.setOnClickListener() {
-            if (validateLogin(usernameEditText, passwordEditText,passwordLayout)) {
-              //  login(usernameEditText.text.trim().toString(), passwordEditText.text.trim().toString())
+            if (validateLogin(userEmailEditText, passwordEditText,passwordLayout)) {
+                login(userEmailEditText.text.trim().toString(), passwordEditText.text.trim().toString())
 
             }else{
                 val toast = Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT)
@@ -77,4 +88,41 @@ class LoginActivity : AppCompatActivity() {
 
         return true
     }
+
+
+    private fun login(email: String, password: String) {
+        loadingDialog.startLoadingDialog()
+        val retIn = RetrofitInstance.getRetrofitInstance().create(RestApiService::class.java)
+        val signInInfo = User(email, password)
+
+        retIn.loginUser(signInInfo).enqueue(object : Callback<ResponseBody> {
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                loadingDialog.dismissDialog()
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Login Failed",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+
+            }
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.code() == 200) {
+                    loadingDialog.dismissDialog()
+                    Toast.makeText(this@LoginActivity, "Welcome!", Toast.LENGTH_SHORT).show()
+                    finish()
+
+                } else if(response.code() == 401){
+                    loadingDialog.dismissDialog()
+                    Toast.makeText(this@LoginActivity, "Invalid credentials", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    loadingDialog.dismissDialog()
+                    Toast.makeText(this@LoginActivity, "Login failed", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+    }
+
 }

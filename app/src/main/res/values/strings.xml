@@ -5,4 +5,5 @@
     <string name="register_link">Create account !</string>
     <string name="SignUpTxt">Sign Up</string>
     <string name="login_link">I already have an account:</string>
+    <string name="loading_text">Loading…</string>
 </resources>
