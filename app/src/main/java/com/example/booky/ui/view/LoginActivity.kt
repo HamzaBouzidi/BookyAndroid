@@ -31,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        loadingDialog = LoadingDialog(this)
 
 
         userEmailLayout = findViewById(R.id.userEmail_tfLayout)
