@@ -44,11 +44,20 @@ class LoginActivity : AppCompatActivity() {
         // Redirect To Register Screen
 
         val registerBtn = findViewById<TextView>(R.id.register_link)
-    /*    registerBtn.setOnClickListener {
+       registerBtn.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-*/
+
+
+        // Redirect To New Activation Code Screen
+        val forgetpassBtn = findViewById<TextView>(R.id.forgetpass_link)
+        forgetpassBtn.setOnClickListener {
+            val intent2 = Intent(this, ResetPassEmailActivity::class.java)
+            startActivity(intent2)
+        }
+
+
         // Login Button Handler
 
         val loginBtn = findViewById<Button>(R.id.login_btn)
@@ -112,11 +121,18 @@ class LoginActivity : AppCompatActivity() {
                 if (response.code() == 200) {
                     loadingDialog.dismissDialog()
                     Toast.makeText(this@LoginActivity, "Welcome!", Toast.LENGTH_SHORT).show()
-                    finish()
+                   // finish()
 
-                } else if(response.code() == 401){
+                } else if(response.code() == 404){
                     loadingDialog.dismissDialog()
-                    Toast.makeText(this@LoginActivity, "Invalid credentials", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Invalid Email", Toast.LENGTH_SHORT).show()
+                }
+                else if(response.code() == 201){
+                    loadingDialog.dismissDialog()
+                    Toast.makeText(this@LoginActivity, "Please Verify Your Email!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@LoginActivity, ComfirmAccountActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
                 else{
                     loadingDialog.dismissDialog()

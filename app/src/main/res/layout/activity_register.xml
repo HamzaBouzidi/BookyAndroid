@@ -45,6 +45,7 @@
             />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/lastName_tfLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -61,17 +62,17 @@
         android:layout_marginTop="15dp"
         app:errorTextAppearance="@color/red"
         app:startIconDrawable="@drawable/baseline_perm_identity_24">
-        >
+
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailEditText"
+            android:id="@+id/lastNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email_tfLayout"
+        android:id="@+id/userEmail_tfLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,10 +87,9 @@
         android:layout_marginTop="15dp"
         app:errorTextAppearance="@color/red"
         app:startIconDrawable="@drawable/baseline_email_24">
-        >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lastNameEditText"
+            android:id="@+id/userEmailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -100,7 +100,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/email_tfLayout"
+        app:layout_constraintTop_toBottomOf="@+id/userEmail_tfLayout"
         android:hint="Password"
         android:inputType="textPassword"
         app:boxCornerRadiusBottomStart="20dp"
@@ -161,7 +161,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/repeatPass_tfLayout" />
     <TextView
-        android:id="@+id/register_link"
+        android:id="@+id/login_link"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
