@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.example.booky.R
 import com.example.booky.data.api.RestApiService
 import com.example.booky.data.api.RetrofitInstance
+import com.example.booky.data.models.LoginResponse
 import com.example.booky.data.models.User
 import com.example.booky.utils.LoadingDialog
 import com.google.android.material.textfield.TextInputEditText
@@ -105,9 +106,9 @@ class LoginActivity : AppCompatActivity() {
         val retIn = RetrofitInstance.getRetrofitInstance().create(RestApiService::class.java)
         val signInInfo = User(email, password)
 
-        retIn.loginUser(signInInfo).enqueue(object : Callback<ResponseBody> {
+        retIn.loginUser(signInInfo).enqueue(object : Callback<LoginResponse> {
 
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 loadingDialog.dismissDialog()
                 Toast.makeText(
                     this@LoginActivity,
@@ -117,7 +118,7 @@ class LoginActivity : AppCompatActivity() {
 
 
             }
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.code() == 200) {
                     loadingDialog.dismissDialog()
                     Toast.makeText(this@LoginActivity, "Welcome!", Toast.LENGTH_SHORT).show()

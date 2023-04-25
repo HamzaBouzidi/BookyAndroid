@@ -1,11 +1,12 @@
 package com.example.booky.ui.view
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.booky.R
 import com.example.booky.data.api.RestApiService
 import com.example.booky.data.api.RetrofitInstance
@@ -16,6 +17,7 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 
+
 class ResetPassEmailActivity : AppCompatActivity() {
 
 
@@ -23,6 +25,7 @@ class ResetPassEmailActivity : AppCompatActivity() {
     lateinit var userEmailEditText: EditText;
     lateinit var loadingDialog: LoadingDialog
     lateinit var submitBtn : Button
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,10 +36,24 @@ class ResetPassEmailActivity : AppCompatActivity() {
         userEmailLayout = findViewById(R.id.userEmail_tfLayout)
         userEmailEditText = findViewById(R.id.userEmailEditText)
         submitBtn = findViewById<Button>(R.id.submit_email_btn)
+
+
+
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+
+
+
         submitBtn.setOnClickListener{
 
             if(validateInput(userEmailEditText)){
+
                 SendConfirmCode(userEmailEditText.text.toString().trim())
+                editor.putString("email_reset_pass",userEmailEditText.text.toString().trim() )
+                editor.apply()
+
+
             }
 
         }

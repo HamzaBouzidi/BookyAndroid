@@ -157,6 +157,8 @@ class RegisterActivity : AppCompatActivity() {
                 if (response.code() == 200) {
                     //loadingDialog.dismissDialog()
                     Toast.makeText(this@RegisterActivity, "User Added Successfully!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@RegisterActivity, ComfirmAccountActivity::class.java)
+                    startActivity(intent)
                     }
                 else if (response.code()==409){
                     Toast.makeText(
