@@ -1,16 +1,21 @@
 package com.example.booky.ui.view
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.booky.MainActivity
 import com.example.booky.R
 import com.example.booky.data.api.RestApiService
 import com.example.booky.data.api.RetrofitInstance
 import com.example.booky.data.models.User
 import com.example.booky.utils.LoadingDialog
 import com.google.android.material.textfield.TextInputLayout
+import com.google.gson.Gson
+import com.google.gson.JsonObject
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -60,7 +65,25 @@ class ComfirmAccountActivity : AppCompatActivity() {
             ) {
                 if (response.code() == 200) {
                     //loadingDialog.dismissDialog()
+                    //saving data
+                    val gson = Gson()
+                    val jsonSTRING = response.body()?.string()
+                    val jsonObject = gson.fromJson(jsonSTRING, JsonObject::class.java)
+                    val userId = jsonObject.get("id").asString
+                    val userFirstName = jsonObject.get("firstName").asString
+                    val userLastName = jsonObject.get("lastName").asString
+                    val userEmail =jsonObject.get("email").asString
+                    val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putString("userId",userId )
+                    editor.putString("userFirstName",userFirstName )
+                    editor.putString("userLastName",userLastName )
+                    editor.putString("userEmail",userEmail )
+                    editor.apply()
                     Toast.makeText(this@ComfirmAccountActivity, "Account Activated Successfully!", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@ComfirmAccountActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
                 else if (response.code()==404){
                     Toast.makeText(

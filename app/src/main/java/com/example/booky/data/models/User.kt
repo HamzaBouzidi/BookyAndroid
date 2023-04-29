@@ -7,7 +7,7 @@ data class User(
     val email:  String,
     val password:  String,
     val verified: Boolean?,
-    val activationCode: String) {
+    val activationCode: String) : java.io.Serializable{
 
     constructor(email: String,password:String)
             : this("", "", "", email, password, null, "")

@@ -15,7 +15,7 @@ interface RestApiService {
     //*********************** Sign up/in ***********************//
     @Headers("Content-Type:application/json")
     @POST("user/login")
-    fun loginUser(@Body info: User): Call<LoginResponse>
+    fun loginUser(@Body info: User): Call<ResponseBody>
 
     @Headers("Content-Type:application/json")
     @POST("user/register")
@@ -59,7 +59,7 @@ class RetrofitInstance {
     companion object {
 
 
-        const val BASE_URL: String = "http://192.168.1.100:9090/"
+        const val BASE_URL: String = "http://192.168.1.15:9090/"
 
         val interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
             this.level = HttpLoggingInterceptor.Level.BODY

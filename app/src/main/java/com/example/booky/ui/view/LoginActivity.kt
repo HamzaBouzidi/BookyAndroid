@@ -1,12 +1,15 @@
 package com.example.booky.ui.view
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.booky.MainActivity
 import com.example.booky.R
 import com.example.booky.data.api.RestApiService
 import com.example.booky.data.api.RetrofitInstance
@@ -16,6 +19,8 @@ import com.example.booky.utils.LoadingDialog
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.gson.Gson
+import com.google.gson.JsonObject
+import kotlinx.coroutines.newFixedThreadPoolContext
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,18 +32,29 @@ class LoginActivity : AppCompatActivity() {
     lateinit var passwordLayout: TextInputLayout;
     lateinit var userEmailEditText: EditText;
     lateinit var passwordEditText: EditText;
+    lateinit var remember: CheckBox;
     lateinit var loadingDialog: LoadingDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val rememberState = sharedPreferences.getBoolean("remember",false)
+
+        if (rememberState){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
         loadingDialog = LoadingDialog(this)
-
-
         userEmailLayout = findViewById(R.id.userEmail_tfLayout)
         passwordLayout = findViewById(R.id.password_tfLayout)
         userEmailEditText = findViewById(R.id.userEmailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
+        remember = findViewById(R.id.rememberMe_ckbx)
 
 
 
@@ -64,7 +80,11 @@ class LoginActivity : AppCompatActivity() {
         val loginBtn = findViewById<Button>(R.id.login_btn)
         loginBtn.setOnClickListener() {
             if (validateLogin(userEmailEditText, passwordEditText,passwordLayout)) {
+
                 login(userEmailEditText.text.trim().toString(), passwordEditText.text.trim().toString())
+
+                //remember.setOnCheckedChangeListener(new
+
 
             }else{
                 val toast = Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT)
@@ -106,9 +126,9 @@ class LoginActivity : AppCompatActivity() {
         val retIn = RetrofitInstance.getRetrofitInstance().create(RestApiService::class.java)
         val signInInfo = User(email, password)
 
-        retIn.loginUser(signInInfo).enqueue(object : Callback<LoginResponse> {
+        retIn.loginUser(signInInfo).enqueue(object : Callback<ResponseBody> {
 
-            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 loadingDialog.dismissDialog()
                 Toast.makeText(
                     this@LoginActivity,
@@ -118,11 +138,48 @@ class LoginActivity : AppCompatActivity() {
 
 
             }
-            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.code() == 200) {
                     loadingDialog.dismissDialog()
+                    //saving data
+                    val gson = Gson()
+                    val jsonSTRING = response.body()?.string()
+                    val jsonObject = gson.fromJson(jsonSTRING, JsonObject::class.java)
+                    val userId = jsonObject.get("id").asString
+                    val userFirstName = jsonObject.get("firstName").asString
+                    val userLastName = jsonObject.get("lastName").asString
+                    val userEmail =userEmailEditText.text.trim().toString()
+                    val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putString("userId",userId )
+                    editor.putString("userFirstName",userFirstName )
+                    editor.putString("userLastName",userLastName )
+                    editor.putString("userEmail",userEmail )
+                    editor.apply()
+                    //val email = sharedPreferences.getString("userEmail", null).toString()
+                    //val id = sharedPreferences.getString("userId", null).toString()
+                    remember.setOnCheckedChangeListener { _, isChecked ->
+                        if (isChecked) {
+                            val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                            val editor = sharedPreferences.edit()
+                            editor.putBoolean("remember",true )
+                            editor.apply()
+
+                        }
+                    }
+
+
+
+
+
+
+
+
                     Toast.makeText(this@LoginActivity, "Welcome!", Toast.LENGTH_SHORT).show()
-                   // finish()
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
 
                 } else if(response.code() == 404){
                     loadingDialog.dismissDialog()
@@ -138,6 +195,7 @@ class LoginActivity : AppCompatActivity() {
                 else{
                     loadingDialog.dismissDialog()
                     Toast.makeText(this@LoginActivity, "Login failed", Toast.LENGTH_SHORT).show()
+
                 }
             }
         })
