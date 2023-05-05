@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/logo" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/username_tfLayout"
+        android:id="@+id/userEmail_tfLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         app:startIconDrawable="@drawable/baseline_perm_identity_24">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/usernameEditText"
+            android:id="@+id/userEmailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -45,7 +45,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/username_tfLayout"
+        app:layout_constraintTop_toBottomOf="@+id/userEmail_tfLayout"
         android:hint="Password"
         android:inputType="textPassword"
         app:boxCornerRadiusBottomStart="20dp"
@@ -79,20 +79,53 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_tfLayout" />
+    <CheckBox
+        android:id="@+id/rememberMe_ckbx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        android:text="@string/remember_me"/>
+
+
     <TextView
         android:id="@+id/register_link"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="12dp"
         android:text="@string/register_link"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/rememberMe_ckbx" />
+    <TextView
+        android:id="@+id/forgetpass_link"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/ForgetPassword"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_link" />
 
 
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="293dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/logo_img"
+        app:layout_constraintVertical_bias="0.944"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
