@@ -342,8 +342,9 @@ export async function updateProfile(req, res) {
         firstName,
         lastName,
       },
+    }, {new: true}).then(user=>{
+      return res.send( user )
     })
-  return res.send({ message: "Profile updated successfully", User })
 
 }
 

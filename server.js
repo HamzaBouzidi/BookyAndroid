@@ -40,7 +40,7 @@ mongoose.set('debug', true);
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(`mongodb+srv://booky:<pass>@cluster0.ujh1rk9.mongodb.net/${databaseName}`).then(() => {
+mongoose.connect(`mongodb+srv://booky:nbvcxw123@cluster0.ujh1rk9.mongodb.net/${databaseName}`).then(() => {
     console.log(`connected to ${databaseName}`);
 } ).catch(er => console.log(er));
 
@@ -78,10 +78,10 @@ const upload = multer({storage: storage})
 //upload image
 
 app.post("/user/profileimage/:id", upload.single('upload'), (req,res) => {
-  book.findById(req.params.id)
+  client.findById(req.params.id)
   .then(client => {        
      
-    client.image = req.file.path
+    client.profilPic = req.file.path
 
     client.save()
       .then(() => res.send(client))

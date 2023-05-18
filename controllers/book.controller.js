@@ -90,7 +90,7 @@ try{
 
 
 export function getAllBooks(req, res) {
-  book.find()
+  book.find().populate('userId')
   .then(users => {
       res.send(users);
   }).catch(err => {

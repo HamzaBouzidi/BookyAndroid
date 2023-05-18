@@ -207,7 +207,7 @@ router.route('/newpassemail').patch(UpdatePassEmail);
  *       500:
  *         description: Some server error
  */
-router.route('/update').patch(updateProfile);
+router.route('/update').put(updateProfile);
 
 router.route('/updateVerififed').put(updateProfileVerififed);
 router.route('/sendmail').post(sendmail);
