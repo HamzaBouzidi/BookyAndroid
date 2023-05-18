@@ -105,4 +105,12 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
 
+<<<<<<< Updated upstream
+=======
+
+    // Shimmer loading effect
+
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+>>>>>>> Stashed changes
 }

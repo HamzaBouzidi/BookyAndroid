@@ -202,11 +202,17 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this@LoginActivity, "Login Success", Toast.LENGTH_SHORT).show()
 
 
+<<<<<<< Updated upstream
                     Log.d("user", user.toString())
 
                     val json = gson.toJson(user)
                     print("////////////////////////////////////////////////")
                     Log.d("json", json.toString())
+=======
+
+                    val json = gson.toJson(user)
+
+>>>>>>> Stashed changes
                     mSharedPref.edit().apply {
                         putString(myuser, json)
                         putString(USER_ID, user.id)

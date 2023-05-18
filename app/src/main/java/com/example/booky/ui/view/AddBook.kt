@@ -67,7 +67,11 @@ class AddBook : AppCompatActivity() {
         amainIntent = Intent(this, MainActivity::class.java)
         btnADDQuestion.setOnClickListener{
             if (txtEditSub?.text!!.isEmpty()) {
+<<<<<<< Updated upstream
                 Toast.makeText(this@AddBook, "Subject must not be empty", Toast.LENGTH_SHORT).show()
+=======
+                Toast.makeText(this@AddBook, " Book Title must not be empty", Toast.LENGTH_SHORT).show()
+>>>>>>> Stashed changes
 
             return@setOnClickListener
         }

@@ -1,5 +1,9 @@
 package com.example.booky.data.api
 import com.example.booky.data.models.Book
+<<<<<<< Updated upstream
+=======
+import com.example.booky.data.models.BookList
+>>>>>>> Stashed changes
 import com.example.booky.data.models.User
 import com.example.booky.data.models.deletebook
 import com.example.booky.data.models.sendmail
@@ -28,7 +32,12 @@ interface RestApiService {
     @POST("user/getuserEmail")
     fun getuserbyemail(@Body info: RequestBody): Call<MutableList<User>>
 
+<<<<<<< Updated upstream
 
+=======
+    @PUT("user/update")
+    fun updateusernotpass(@Body info: RequestBody): Call<User>
+>>>>>>> Stashed changes
 
     @POST("user/sendmail")
     fun sendmail(@Body info: RequestBody): Call<sendmail>
@@ -43,13 +52,24 @@ interface RestApiService {
     fun createbook(@Body info: RequestBody): Call<Book>
 
     @GET("/book/getAllBooks")
+<<<<<<< Updated upstream
     fun AllBooks(): Call<MutableList<Book>>
+=======
+    fun AllBooks(): Call<MutableList<BookList>>
+>>>>>>> Stashed changes
 
     @DELETE("/book/deleteBook/{id}")
     fun deletebook(@Path("id") id : String): Call<deletebook>
 
     @POST("/book/updateBook/{id}")
     fun Updatbook(@Body info: RequestBody,@Path("id") id : String): Call<Book>
+<<<<<<< Updated upstream
+=======
+
+    @Multipart
+    @POST("/user/profileimage/{id}")
+    fun upload(@Part image: MultipartBody.Part,@Path("id") id : String): Call<User>
+>>>>>>> Stashed changes
     //*********************** Sign up/in ***********************//
     @Headers("Content-Type:application/json")
     @POST("user/login")

@@ -10,7 +10,11 @@
 
     <item
         android:id="@+id/map"
+<<<<<<< Updated upstream
         android:title="Map"
+=======
+        android:title="Chat"
+>>>>>>> Stashed changes
         android:textStyle="bold"
         android:icon="@drawable/ic_baseline_map_24"
         />
@@ -20,12 +24,20 @@
 
     <item
         android:id="@+id/chat"
+<<<<<<< Updated upstream
         android:title="Chat"
+=======
+        android:title="Profil"
+>>>>>>> Stashed changes
         android:textStyle="bold"
         android:icon="@drawable/ic_baseline_chat_24" />
     <item
         android:id="@+id/profil"
+<<<<<<< Updated upstream
         android:title="Profil"
+=======
+        android:title="Settings"
+>>>>>>> Stashed changes
         android:textStyle="bold"
         android:icon="@drawable/ic_baseline_person_24" />
 

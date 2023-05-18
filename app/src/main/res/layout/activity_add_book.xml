@@ -56,7 +56,10 @@
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         android:text="Next"
         android:textColor="@color/white"
         android:textSize="18sp"

@@ -1,54 +1,46 @@
 package com.example.booky.ui.fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.widget.addTextChangedListener
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.booky.R
 import com.example.booky.data.api.RestApiService
 import com.example.booky.data.api.RetrofitInstance
 import com.example.booky.data.models.Book
-<<<<<<< Updated upstream
-=======
 import com.example.booky.data.models.BookList
->>>>>>> Stashed changes
+import com.example.booky.data.models.User
 import com.example.booky.ui.adapter.BookAdapter
+import com.example.booky.ui.adapter.BookAdapterMyList
+import com.example.booky.ui.view.PREF_NAME
+import com.example.booky.ui.view.myuser
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-
-
 /**
  * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
+ * Use the [MyBookFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
+class MyBookFragment : Fragment() {
 
     lateinit var recylcerChampion: RecyclerView
-    lateinit var recylcerChampionAdapter: BookAdapter
-<<<<<<< Updated upstream
-    var champList : MutableList<Book> = ArrayList()
-    var champList2 : MutableList<Book> = ArrayList()
-=======
+    lateinit var recylcerChampionAdapter: BookAdapterMyList
     var champList : MutableList<BookList> = ArrayList()
     var champList2 : MutableList<BookList> = ArrayList()
->>>>>>> Stashed changes
-    lateinit  var recherche :TextView
+    lateinit  var recherche : TextView
+    lateinit var nowuser: User
+    private lateinit var mSharedPref: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -59,8 +51,12 @@ class HomeFragment : Fragment() {
 
         recylcerChampion = rootView.findViewById(R.id.listView)
         recherche = rootView.findViewById(R.id.recherche)
+         mSharedPref  = this.requireActivity()?.getSharedPreferences(PREF_NAME, AppCompatActivity.MODE_PRIVATE)!!
 
+        val gson = Gson()
+        val  us =  mSharedPref.getString(myuser, "")
 
+        nowuser = gson.fromJson(us,User::class.java)
 
         doLogin()
         var text=""
@@ -73,24 +69,19 @@ class HomeFragment : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
 
-<<<<<<< Updated upstream
-                champList2 =     champList.filter { book ->  book.title.contains(s.toString())  } as MutableList<Book>
-             if(champList2.size == 0){
-                 champList2 = champList.filter { book ->  book.description.contains(s.toString())  } as MutableList<Book>
-=======
                 champList2 =     champList.filter { book ->  book.title.contains(s.toString())  } as MutableList<BookList>
              if(champList2.size == 0){
                  champList2 = champList.filter { book ->  book.description.contains(s.toString())  } as MutableList<BookList>
->>>>>>> Stashed changes
              }
-                recylcerChampionAdapter = BookAdapter(ArrayList(champList2.asReversed()))
+                recylcerChampionAdapter = BookAdapterMyList(ArrayList(champList2.asReversed()))
                 recylcerChampion.adapter = recylcerChampionAdapter
             }
         })
 
-        recylcerChampionAdapter = BookAdapter(champList)
+        recylcerChampionAdapter = BookAdapterMyList(champList)
         recylcerChampion.adapter = recylcerChampionAdapter
-        recylcerChampion.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL ,false)
+        recylcerChampion.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
 
         return rootView
@@ -101,22 +92,17 @@ class HomeFragment : Fragment() {
 
 
 
-<<<<<<< Updated upstream
-        apiInterface.AllBooks().enqueue(object : Callback<MutableList<Book>> {
-
-            override fun onResponse(call: Call<MutableList<Book>>, response: Response<MutableList<Book>>) {
-=======
         apiInterface.AllBooks().enqueue(object : Callback<MutableList<BookList>> {
 
             override fun onResponse(call: Call<MutableList<BookList>>, response: Response<MutableList<BookList>>) {
->>>>>>> Stashed changes
 
                 val user = response.body()
 
                 if (user != null) {
-                    champList=user
+                    champList=ArrayList(user.asReversed().filter { book -> book.userId.id==nowuser.id })
 
-                    recylcerChampionAdapter = BookAdapter(ArrayList(champList.asReversed()))
+                    recylcerChampionAdapter =
+                        BookAdapterMyList(champList)
                     recylcerChampion.adapter = recylcerChampionAdapter
 
                 }
@@ -125,11 +111,7 @@ class HomeFragment : Fragment() {
 
             }
 
-<<<<<<< Updated upstream
-            override fun onFailure(call: Call<MutableList<Book>>, t: Throwable) {
-=======
             override fun onFailure(call: Call<MutableList<BookList>>, t: Throwable) {
->>>>>>> Stashed changes
 
             }
 

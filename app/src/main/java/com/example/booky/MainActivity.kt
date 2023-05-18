@@ -43,8 +43,13 @@ class MainActivity : AppCompatActivity() {
         binding!!.bottomNavigationView.setOnItemSelectedListener { item: MenuItem ->
             when (item.itemId) {
                 R.id.home -> replaceFragment(HomeFragment())
+<<<<<<< Updated upstream
                 R.id.map -> replaceFragment(HomeFragment())
                 R.id.chat -> replaceFragment(HomeFragment())
+=======
+                R.id.map -> replaceFragment(MessagesFragment())
+                R.id.chat -> replaceFragment(MyBookFragment())
+>>>>>>> Stashed changes
                 R.id.profil -> replaceFragment(SettingsFragment())
             }
             true

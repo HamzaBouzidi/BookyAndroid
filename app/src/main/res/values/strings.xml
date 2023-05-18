@@ -25,7 +25,14 @@
     <string name="remember_me">remember me</string>
     <string name="logout">Logout</string>
     <string name="rechercheTxt">Search</string>
+<<<<<<< Updated upstream
 
+=======
+    <string name="todo">todo</string>
+    <string name="description">description</string>
+    <string name="title">title</string>
+    <string name="new_message">new message</string>
+>>>>>>> Stashed changes
 
     <string name="upload_your">Upload Your book</string>
     <string name="book_title">Book Title</string>
