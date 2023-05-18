@@ -1,6 +1,10 @@
 package com.example.booky.ui.fragments
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+import android.content.Context
+>>>>>>> Stashed changes
 =======
 import android.content.Context
 >>>>>>> Stashed changes
@@ -9,6 +13,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 import com.example.booky.R
 
@@ -35,6 +40,8 @@ class MessagesFragment : Fragment() {
         }
     }
 =======
+=======
+>>>>>>> Stashed changes
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.booky.R
@@ -59,6 +66,9 @@ class MessagesFragment : Fragment() {
     private var shimmerFrameLayout: ShimmerFrameLayout? = null
     private var conversationAdapter: ConversationAdapter? = null
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     override fun onCreateView(
@@ -66,6 +76,7 @@ class MessagesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         return inflater.inflate(R.layout.fragment_messages, container, false)
     }
@@ -90,6 +101,8 @@ class MessagesFragment : Fragment() {
             }
     }
 =======
+=======
+>>>>>>> Stashed changes
         val view = inflater.inflate(R.layout.fragment_messages, container, false)
         // VIEW BINDING
         shimmerFrameLayout = view?.findViewById(R.id.shimmerLayout)
@@ -152,5 +165,8 @@ class MessagesFragment : Fragment() {
     }
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

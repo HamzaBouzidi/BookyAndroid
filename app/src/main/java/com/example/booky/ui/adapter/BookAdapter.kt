@@ -1,6 +1,12 @@
 package com.example.booky.ui.adapter
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+import android.app.AlertDialog
+import android.content.Intent
+import android.content.SharedPreferences
+>>>>>>> Stashed changes
 =======
 import android.app.AlertDialog
 import android.content.Intent
@@ -10,6 +16,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +30,8 @@ import com.google.android.material.imageview.ShapeableImageView
 class BookAdapter(private val bookList: MutableList<Book>): RecyclerView.Adapter<BookAdapter.BookViewHolder>(){
 
 =======
+=======
+>>>>>>> Stashed changes
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -50,12 +59,19 @@ import java.util.Date
 
 class BookAdapter(private val bookList: MutableList<BookList>): RecyclerView.Adapter<BookAdapter.BookViewHolder>(){
     lateinit var itemView2:View
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_row,parent,false)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+        itemView2 = LayoutInflater.from(parent.context).inflate(R.layout.list_row_click,parent,false)
+>>>>>>> Stashed changes
 =======
         itemView2 = LayoutInflater.from(parent.context).inflate(R.layout.list_row_click,parent,false)
 >>>>>>> Stashed changes
@@ -73,6 +89,7 @@ class BookAdapter(private val bookList: MutableList<BookList>): RecyclerView.Ada
         holder.bookDescription.text = currentItem.description
         holder.bookOffer.text = currentItem.offre
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         var imagee= bookList[position].image
         if( imagee!=null && imagee.length>14){
             imagee = "img/"+ imagee.subSequence(14,imagee.length)
@@ -83,6 +100,8 @@ Log.d("ima",imagee)
 
         Glide.with(holder.bookImage).load("http://10.0.2.2:9090/" +imagee).placeholder(R.drawable.user).circleCrop()
 =======
+=======
+>>>>>>> Stashed changes
         holder.usernme.text = currentItem.userId.firstName + " " +currentItem.userId.lastName
         var imagee= bookList[position].userId.profilPic
         var imagebook= bookList[position].image
@@ -160,6 +179,9 @@ Log.d("ima",imagee)
         Glide.with(holder.UserImage).load("http://10.0.2.2:9090/" +imagee).placeholder(R.drawable.user).circleCrop()
             .error(R.drawable.user).into(holder.UserImage)
         Glide.with(holder.bookImage).load("http://10.0.2.2:9090/" +imagebook).placeholder(R.drawable.user)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             .error(R.drawable.user).into(holder.bookImage)
 
@@ -168,6 +190,7 @@ Log.d("ima",imagee)
 
     class BookViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
         val bookImage: ShapeableImageView =itemView.findViewById(R.id.title_image)
         val bookTitle: TextView = itemView.findViewById(R.id.book_title)
@@ -175,12 +198,17 @@ Log.d("ima",imagee)
         val bookOffer: TextView = itemView.findViewById(R.id.book_offer)
 
 =======
+=======
+>>>>>>> Stashed changes
         val bookImage: ImageView =itemView.findViewById(R.id.imagebook)
         val UserImage: ShapeableImageView =itemView.findViewById(R.id.title_image)
         val bookTitle: TextView = itemView.findViewById(R.id.book_title)
         val bookDescription: TextView = itemView.findViewById(R.id.book_description)
         val bookOffer: TextView = itemView.findViewById(R.id.book_offer)
         val usernme: TextView = itemView.findViewById(R.id.username)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }

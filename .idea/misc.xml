@@ -4,11 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
         <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/AndroidProj-main-main/app/src/main/res/layout/list_row_click.xml" value="0.1" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/AndroidProj-main-main/app/src/main/res/layout/single_chat_shimmer.xml" value="0.4" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/AndroidProj-main-main/app/src/main/res/layout/single_conversation.xml" value="0.2" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/AndroidProj-main-main/app/src/main/res/layout/single_message.xml" value="0.4" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+        <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/AndroidProj-main-main/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/AndroidProj-main-main/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/AndroidProj-main-main/app/src/main/res/mipmap-anydpi-v33/ic_launcher.xml" value="0.1" />
 >>>>>>> Stashed changes
         <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/hamza/BookyAndroid-FrontHamza/app/src/main/res/drawable/custom_shape.xml" value="0.1" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/hamza/BookyAndroid-FrontHamza/app/src/main/res/layout/activity_add_book.xml" value="0.1" />
@@ -25,6 +34,7 @@
         <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/hamza/BookyAndroid-FrontHamza/app/src/main/res/menu/bottom_menu.xml" value="0.22864583333333333" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/arij/hamza/BookyAndroid-FrontHamza/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22864583333333333" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/drawable/ic_add.xml" value="0.1" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/layout/activity_google_login.xml" value="0.2" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/layout/activity_login.xml" value="0.2" />
@@ -37,6 +47,8 @@
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/layout/list_row_user.xml" value="0.4" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/layout/loading_dialog.xml" value="0.20416666666666666" />
 =======
+=======
+>>>>>>> Stashed changes
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/drawable/baseline_delete_24.xml" value="0.1" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/drawable/ic_add.xml" value="0.1" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/layout/activity_add_book.xml" value="0.21666666666666667" />
@@ -60,6 +72,9 @@
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/layout/single_chat_shimmer.xml" value="0.1" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/layout/single_conversation.xml" value="0.1" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/layout/single_message.xml" value="0.1" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Arij/OneDrive/Bureau/final validation android/Android-Booky-main/app/src/main/res/menu/bottom_nav_menu.xml" value="0.21666666666666667" />
@@ -70,7 +85,11 @@
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+>>>>>>> Stashed changes
 =======
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
 >>>>>>> Stashed changes

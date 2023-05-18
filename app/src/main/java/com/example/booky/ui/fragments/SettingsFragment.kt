@@ -1,7 +1,10 @@
 package com.example.booky.ui.fragments
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import android.content.Context
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 import android.content.Intent
@@ -14,6 +17,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,6 +37,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 =======
+=======
+>>>>>>> Stashed changes
 import com.bumptech.glide.Glide
 import com.example.booky.R
 import com.example.booky.data.models.User
@@ -43,6 +49,9 @@ import com.example.booky.ui.view.UploadImageUser
 import com.example.booky.ui.view.myuser
 import com.google.gson.Gson
 import de.hdodenhof.circleimageview.CircleImageView
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
@@ -69,14 +78,20 @@ class SettingsFragment : Fragment() {
         val email = view.findViewById<TextView>(R.id.profileEmailINPT)
         val logoutButton = view.findViewById<Button>(R.id.logout_btn)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         val Button = view.findViewById<Button>(R.id.logout_btn_mylist)
 
 
 =======
+=======
+>>>>>>> Stashed changes
         val ButtonUpdateuser = view.findViewById<Button>(R.id.logout_btn_Updateuser)
         val ButtonuploadImage = view.findViewById<Button>(R.id.logout_btn_uploadImage)
 
         val image = view.findViewById<CircleImageView>(R.id.profile_image)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         val gson = Gson()
 
@@ -85,10 +100,13 @@ class SettingsFragment : Fragment() {
 
         val nowuser = gson.fromJson(us, User::class.java)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 
 
 =======
+=======
+>>>>>>> Stashed changes
         var imagee =""
         if( nowuser.profilPic!=null && nowuser.profilPic.length > 14){
             imagee = "img/"+ nowuser.profilPic.subSequence(14,nowuser.profilPic.length)
@@ -96,6 +114,9 @@ class SettingsFragment : Fragment() {
         }
         Glide.with(image).load("http://10.0.2.2:9090/" +imagee).placeholder(R.drawable.user).circleCrop()
             .error(R.drawable.user).into(image)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         email.text=nowuser.email
         name.text= "${nowuser.firstName} ${nowuser.lastName}"
@@ -110,11 +131,14 @@ class SettingsFragment : Fragment() {
 
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         Button.setOnClickListener {
 
 
             val intent = Intent(requireContext(), MyBook::class.java)
 =======
+=======
+>>>>>>> Stashed changes
         ButtonUpdateuser.setOnClickListener {
 
 
@@ -127,6 +151,9 @@ class SettingsFragment : Fragment() {
 
 
             val intent = Intent(requireContext(), UploadImageUser::class.java)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             startActivity(intent)
 

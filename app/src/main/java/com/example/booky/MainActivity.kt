@@ -44,8 +44,13 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.home -> replaceFragment(HomeFragment())
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 R.id.map -> replaceFragment(HomeFragment())
                 R.id.chat -> replaceFragment(HomeFragment())
+=======
+                R.id.map -> replaceFragment(MessagesFragment())
+                R.id.chat -> replaceFragment(MyBookFragment())
+>>>>>>> Stashed changes
 =======
                 R.id.map -> replaceFragment(MessagesFragment())
                 R.id.chat -> replaceFragment(MyBookFragment())

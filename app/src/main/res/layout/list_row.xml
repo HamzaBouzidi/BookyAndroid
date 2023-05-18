@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     android:layout_height="180dp"
+=======
+    android:layout_height="360dp"
+>>>>>>> Stashed changes
 =======
     android:layout_height="360dp"
 >>>>>>> Stashed changes
@@ -18,7 +22,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         android:layout_height="wrap_content"
+=======
+        android:layout_height="337dp"
+>>>>>>> Stashed changes
 =======
         android:layout_height="337dp"
 >>>>>>> Stashed changes
@@ -27,6 +35,7 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/title_image"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -42,6 +51,8 @@
             android:layout_height="20dp"
             android:layout_marginTop="16dp"
 =======
+=======
+>>>>>>> Stashed changes
             android:layout_width="41dp"
             android:layout_height="43dp"
             android:adjustViewBounds="true"
@@ -70,6 +81,9 @@
             android:layout_width="163dp"
             android:layout_height="21dp"
             android:layout_marginTop="60dp"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             android:text="this is the title of the book"
             android:textColor="@color/black"
@@ -77,8 +91,13 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             app:layout_constraintHorizontal_bias="0.529"
             app:layout_constraintStart_toEndOf="@+id/title_image"
+=======
+            app:layout_constraintHorizontal_bias="0.083"
+            app:layout_constraintStart_toStartOf="parent"
+>>>>>>> Stashed changes
 =======
             app:layout_constraintHorizontal_bias="0.083"
             app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +109,11 @@
             android:layout_width="241dp"
             android:layout_height="20dp"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             android:layout_marginTop="20dp"
+=======
+            android:layout_marginTop="12dp"
+>>>>>>> Stashed changes
 =======
             android:layout_marginTop="12dp"
 >>>>>>> Stashed changes
@@ -99,11 +122,14 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             app:layout_constraintHorizontal_bias="0.529"
             app:layout_constraintStart_toEndOf="@+id/title_image"
             app:layout_constraintTop_toBottomOf="@+id/book_title" />
 
 =======
+=======
+>>>>>>> Stashed changes
             app:layout_constraintHorizontal_bias="0.14"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/book_title" />
@@ -119,13 +145,20 @@
             tools:ignore="MissingConstraints" />
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         <TextView
             android:id="@+id/book_offer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             android:layout_marginTop="16dp"
+=======
+            android:layout_marginTop="256dp"
+>>>>>>> Stashed changes
 =======
             android:layout_marginTop="256dp"
 >>>>>>> Stashed changes
@@ -135,7 +168,11 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             app:layout_constraintHorizontal_bias="0.05"
+=======
+            app:layout_constraintHorizontal_bias="0.901"
+>>>>>>> Stashed changes
 =======
             app:layout_constraintHorizontal_bias="0.901"
 >>>>>>> Stashed changes

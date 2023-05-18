@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+>>>>>>> Stashed changes
 =======
     xmlns:app="http://schemas.android.com/apk/res-auto"
 >>>>>>> Stashed changes
@@ -9,6 +13,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.MessagesFragment">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -16,6 +21,8 @@
         android:layout_height="match_parent"
         android:text="Messages Fragments" />
 =======
+=======
+>>>>>>> Stashed changes
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmerLayout"
         android:layout_width="match_parent"
@@ -47,6 +54,9 @@
         android:id="@+id/conversationsRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 </FrameLayout>

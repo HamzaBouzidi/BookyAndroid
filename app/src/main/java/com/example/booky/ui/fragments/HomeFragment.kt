@@ -17,6 +17,10 @@ import com.example.booky.data.api.RestApiService
 import com.example.booky.data.api.RetrofitInstance
 import com.example.booky.data.models.Book
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+import com.example.booky.data.models.BookList
+>>>>>>> Stashed changes
 =======
 import com.example.booky.data.models.BookList
 >>>>>>> Stashed changes
@@ -42,8 +46,13 @@ class HomeFragment : Fragment() {
     lateinit var recylcerChampion: RecyclerView
     lateinit var recylcerChampionAdapter: BookAdapter
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     var champList : MutableList<Book> = ArrayList()
     var champList2 : MutableList<Book> = ArrayList()
+=======
+    var champList : MutableList<BookList> = ArrayList()
+    var champList2 : MutableList<BookList> = ArrayList()
+>>>>>>> Stashed changes
 =======
     var champList : MutableList<BookList> = ArrayList()
     var champList2 : MutableList<BookList> = ArrayList()
@@ -74,9 +83,15 @@ class HomeFragment : Fragment() {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 champList2 =     champList.filter { book ->  book.title.contains(s.toString())  } as MutableList<Book>
              if(champList2.size == 0){
                  champList2 = champList.filter { book ->  book.description.contains(s.toString())  } as MutableList<Book>
+=======
+                champList2 =     champList.filter { book ->  book.title.contains(s.toString())  } as MutableList<BookList>
+             if(champList2.size == 0){
+                 champList2 = champList.filter { book ->  book.description.contains(s.toString())  } as MutableList<BookList>
+>>>>>>> Stashed changes
 =======
                 champList2 =     champList.filter { book ->  book.title.contains(s.toString())  } as MutableList<BookList>
              if(champList2.size == 0){
@@ -102,9 +117,15 @@ class HomeFragment : Fragment() {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         apiInterface.AllBooks().enqueue(object : Callback<MutableList<Book>> {
 
             override fun onResponse(call: Call<MutableList<Book>>, response: Response<MutableList<Book>>) {
+=======
+        apiInterface.AllBooks().enqueue(object : Callback<MutableList<BookList>> {
+
+            override fun onResponse(call: Call<MutableList<BookList>>, response: Response<MutableList<BookList>>) {
+>>>>>>> Stashed changes
 =======
         apiInterface.AllBooks().enqueue(object : Callback<MutableList<BookList>> {
 
@@ -126,7 +147,11 @@ class HomeFragment : Fragment() {
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             override fun onFailure(call: Call<MutableList<Book>>, t: Throwable) {
+=======
+            override fun onFailure(call: Call<MutableList<BookList>>, t: Throwable) {
+>>>>>>> Stashed changes
 =======
             override fun onFailure(call: Call<MutableList<BookList>>, t: Throwable) {
 >>>>>>> Stashed changes

@@ -11,7 +11,11 @@
     <item
         android:id="@+id/map"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         android:title="Map"
+=======
+        android:title="Chat"
+>>>>>>> Stashed changes
 =======
         android:title="Chat"
 >>>>>>> Stashed changes
@@ -25,7 +29,11 @@
     <item
         android:id="@+id/chat"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         android:title="Chat"
+=======
+        android:title="Profil"
+>>>>>>> Stashed changes
 =======
         android:title="Profil"
 >>>>>>> Stashed changes
@@ -34,7 +42,11 @@
     <item
         android:id="@+id/profil"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         android:title="Profil"
+=======
+        android:title="Settings"
+>>>>>>> Stashed changes
 =======
         android:title="Settings"
 >>>>>>> Stashed changes

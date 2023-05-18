@@ -203,11 +203,17 @@ class LoginActivity : AppCompatActivity() {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     Log.d("user", user.toString())
 
                     val json = gson.toJson(user)
                     print("////////////////////////////////////////////////")
                     Log.d("json", json.toString())
+=======
+
+                    val json = gson.toJson(user)
+
+>>>>>>> Stashed changes
 =======
 
                     val json = gson.toJson(user)

@@ -35,13 +35,19 @@
             android:exported="false" />
         <activity
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             android:name=".ui.view.UpdateProfile"
             android:exported="false" />
         <activity
             android:name=".ui.view.UploadImageUser"
             android:exported="false" />
         <activity
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             android:name=".ui.view.UpdateBook"
             android:exported="false" />
@@ -50,6 +56,12 @@
             android:exported="false" />
         <activity
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            android:name=".ui.view.ChatActivity"
+            android:exported="false" />
+        <activity
+>>>>>>> Stashed changes
 =======
             android:name=".ui.view.ChatActivity"
             android:exported="false" />

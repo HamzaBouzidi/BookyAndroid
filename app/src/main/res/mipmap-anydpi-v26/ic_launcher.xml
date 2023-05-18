@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+<<<<<<< Updated upstream
     <background android:drawable="@drawable/img" />
     <foreground android:drawable="@drawable/img" />
+=======
+    <background android:drawable="@drawable/booky" />
+    <foreground android:drawable="@drawable/booky" />
+>>>>>>> Stashed changes
 </adaptive-icon>
